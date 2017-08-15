@@ -1,0 +1,28 @@
+{
+  "apps:": [
+    {
+      "name": "website",
+      "script": "prod.server.js",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "evan",
+      "host": ["120.77.45.59"],
+      "port": "4000",
+      "ref": "origin/master",
+      "repo": "git@github.com:Evan-90/vue-music.git",
+      "path": "/www/website/production",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
